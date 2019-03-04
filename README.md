@@ -1,134 +1,78 @@
-# Lanyon
 
-Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
+![aliquam rwd](/demo.jpg)
 
-![Lanyon](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
-![Lanyon with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
+# aliquam
+
+Want example? [check this out](http://grrinchas.github.io/aliquam/)
+
+Want real life example? [check this out](http://grrinchas.github.io/)
 
 
-## Contents
 
-- [Usage](#usage)
-- [Options](#options)
-  - [Sidebar menu](#sidebar-menu)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
-- [Development](#development)
-- [Author](#author)
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Configuration](#configuration)
 - [License](#license)
 
 
-## Usage
 
-Lanyon is a theme built on top of [Poole](https://github.com/poole/poole), which provides a fully furnished Jekyll setup—just download and start the Jekyll server. See [the Poole usage guidelines](https://github.com/poole/poole#usage) for how to install and use Jekyll.
+## <a name="features"></a>Features
 
+- [Disqus](https://disqus.com/) comment system
+- Google analytics
+- Pagination support
+- Custom tags and categories
+- SEO support
+- Contact form integration
+- MathJax support
 
-## Options
+## <a name="installation"></a>Installation
 
-Lanyon includes some customizable options, typically applied via classes on the `<body>` element.
+#### Method 1: new master's repository (The Best)
 
+1. First [fork](https://github.com/grrinchas/aliquam/fork) it.
+2. Change your forked repository name _aliquam_ to __userName.github.io__ where
+   __userName__ is your github user name.
+3. Access your new blog via [https://username.github.io](https://username.github.io).
+4. [See configuration](#configuration).
 
-### Sidebar menu
+#### Method 2: gh-pages in existing repository
+1. Create a new branch called _gh-pages_ in the repository where you want to add a template [managing branches](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
+2. From command line run `git clone https://github.com/grrinchas/aliquam` - this will clone _aliquam_ template to your computer.
+3. Create new branch `git checkout -b gh-pages` where _gh-pages_ will be your branch name.
+4. Add remote, which is your repo from the first step, to your new branch `git remote add gh-pages https://github.com/<yourName>/<yourMaster>/gh-pages`. _yourName_ is your account name and _yourMaster_ is your repository.
+5. Push new branch to remote `git push gh-pages`.
+6. Update `_config.yml` file by changing `baseurl: "<branchName>"` _branchName_ is your branch name where _gh-pages_ resides. See [configuration](#configuration).
 
-Create a list of nav links in the sidebar by assigning each Jekyll page the correct layout in the page's [front-matter](http://jekyllrb.com/docs/frontmatter/).
+#### Method 3: run it locally
 
-```
----
-layout: page
-title: About
----
-```
+1. Download [zip](https://github.com/grrinchas/aliquam/archive/master.zip) or clone it `git clone https://github.com/grrinchas/aliquam`.
+2. Go inside folder and run `jekyll serve` or `bundle exec jekyll s`. This will build a website which you can access [https://localhost:4000](https://localhost:4000). You need to have [Jekyll](https://jekyllrb.com/docs/installation/) installed to do this.
 
-**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.html` page from this list by specifying the `page` layout.
+## <a name="configuration"></a>Configuration
 
+All configuration is done via `_config.yml` file which you will find in your main repo folder.
 
-### Themes
+- `url: "https://<yourName>.github.io"` - Change this to your domain (need for Disqus integration). !NOTE if running locally change this to `url: "https://localhost:4000"`.
+- `disqus: "<disqusName>"` - Your disqus name. First you have to create account with [Disqus](https://disqus.com/).
+- `owner: "<name surname>"` - Change this to your own name, need for copyright in the footer.
+- `title: "<title>"` and `subtitle: "<subtitle>"` Change to your preferred title/subtitle.
+- `baseurl: "/<branchName>"` - Change this to your branch name where _gh-pages_ resides. !NOTE apply only if you used __Method 2__ for installation.
+- `google_analytics: <your_ID>` - Change this to your google analytics ID.
+- `contact_PK: <yourPublicKey>` - Change this to your [http://getsimpleform.com](http://getsimpleform.com) public key.
+- `math: true` - set `false` to disable maths support. For more information check [MathJax](https://www.mathjax.org/).
 
-Lanyon ships with eight optional themes based on the [base16 color scheme](https://github.com/chriskempson/base16). Apply a theme to change the color scheme (mostly applies to sidebar and links).
+To get your public key:
 
-![Lanyon with red theme](https://f.cloud.github.com/assets/98681/1825270/be065110-71b0-11e3-9ed8-9b8de753a4af.png)
-![Lanyon with red theme and open sidebar](https://f.cloud.github.com/assets/98681/1825269/be05ec20-71b0-11e3-91ea-a9138ef07186.png)
+1. Got to [http://getsimpleform.com](http://getsimpleform.com).
+2. Enter your email and press `Send me a token`.
+3. Go to your email and copy your token `Your form api token is <token>`. !NOTE do not copy your private key.
+4. Paste this key to `contact_PK` in `_config.yml`.
+5. Every time when someone sends you a message you will receive a notification to your email.
 
-There are eight themes available at this time.
+## <a name="license"></a>License
 
-![Available theme classes](https://f.cloud.github.com/assets/98681/1817044/e5b0ec06-6f68-11e3-83d7-acd1942797a1.png)
-
-To use a theme, add any one of the available theme classes to the `<body>` element in the `default.html` layout, like so:
-
-```html
-<body class="theme-base-08">
-  ...
-</body>
-```
-
-To create your own theme, look to the Themes section of [included CSS file](https://github.com/poole/lanyon/blob/master/public/css/lanyon.css). Copy any existing theme (they're only a few lines of CSS), rename it, and change the provided colors.
-
-
-### Reverse layout
-
-![Lanyon with reverse layout](https://f.cloud.github.com/assets/98681/1825265/be03f2e4-71b0-11e3-89f1-360705524495.png)
-![Lanyon with reverse layout and open sidebar](https://f.cloud.github.com/assets/98681/1825268/be056174-71b0-11e3-88c8-5055bca4307f.png)
-
-Reverse the page orientation with a single class.
-
-```html
-<body class="layout-reverse">
-  ...
-</body>
-```
-
-
-### Sidebar overlay instead of push
-
-Make the sidebar overlap the viewport content with a single class:
-
-```html
-<body class="sidebar-overlay">
-  ...
-</body>
-```
-
-This will keep the content stationary and slide in the sidebar over the side content. It also adds a `box-shadow` based outline to the toggle for contrast against backgrounds, as well as a `box-shadow` on the sidebar for depth.
-
-It's also available for a reversed layout when you add both classes:
-
-```html
-<body class="layout-reverse sidebar-overlay">
-  ...
-</body>
-```
-
-### Sidebar open on page load
-
-Show an open sidebar on page load by modifying the `<input>` tag within the `sidebar.html` layout to add the `checked` boolean attribute:
-
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
-```
-
-Using Liquid you can also conditionally show the sidebar open on a per-page basis. For example, here's how you could have it open on the homepage only:
-
-```html
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" {% if page.title =="Home" %}checked{% endif %}>
-```
-
-## Development
-
-Lanyon has two branches, but only one is used for active development.
-
-- `master` for development.  **All pull requests should be to submitted against `master`.**
-- `gh-pages` for our hosted site, which includes our analytics tracking code. **Please avoid using this branch.**
-
-
-## Author
-
-**Mark Otto**
-- <https://github.com/mdo>
-- <https://twitter.com/mdo>
-
-
-## License
-
-Open sourced under the [MIT license](LICENSE.md).
-
-<3
+This project is licensed under the MIT License - see [The MIT License (MIT)](https://opensource.org/licenses/MIT)
+for more details.
