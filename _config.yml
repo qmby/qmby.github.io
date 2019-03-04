@@ -9,7 +9,7 @@ title:               箐珉布业
 tagline:             '涤丝磨毛花布、绿布'
 description:         '主营涤丝磨毛花布、绿布、定织定染'
 url:                 https://qmby.github.io
-baseurl:             ''
+baseurl:             /
 paginate:            5
 
 # About/contact
