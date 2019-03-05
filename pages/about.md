@@ -1,11 +1,17 @@
 ---
 layout: page
 title: About
-description: More information about me and this website.
+description: 
 ---
 
-I am ...
+## 关于我们
+### 主营类型：涤丝磨毛布
+1. 2.05米幅宽花布，绿布，漂白布，天蓝布；
+2. 2.25米幅宽花布，绿布，漂白布，天蓝布；
+3. 2.30米幅宽羽丝绒夏凉被花布；
+4. 1.55米宽天蓝布；
+5. 支持各种涤丝磨毛布的定制定染。
 
-## Contact form
+## 联系我们
 
-{% include contact_form.html %}
+QQ:781555255

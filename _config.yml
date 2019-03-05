@@ -4,18 +4,18 @@
 ##########################################
 
 # Set this for Copyright in the footer
-owner: qmby
+owner: 箐珉布业
 
 # Optional quote in the footer
 # To disable set enable to false
 quote:
-  enable: true
+  enable: false
   quote: quote 更改标记
   author: 箐珉布业
 
 # Set this to your main site title. If page doesn't have its own title,
 # then this title will be used.
-title: Aliquam Theme
+title: 箐珉布业
 
 
 # Following needed for disqus integration
@@ -38,7 +38,7 @@ baseurl:
 google_analytics:
 
 # Contact form pupublic key
-contact_PK:
+contact_PK: 
 
 ##########################################
 #          Optional variables
